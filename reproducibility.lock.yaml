@@ -1,0 +1,113 @@
+schema_version: 1
+captured_at: "2026-08-08T10:28:13+08:00"
+platform:
+  apu: "AMD Ryzen AI MAX+ 395"
+  gpu: "AMD Radeon 8060S Graphics"
+  architecture: gfx1151
+  os: "Ubuntu 26.04"
+  kernel: "7.0.0-29-generic"
+  rocm: "7.14"
+  hip: "7.14.60850"
+  gpu_visible_memory_mib: 114688
+
+mineru:
+  version: "3.4.4"
+  python: "3.12.12"
+  pytorch: "2.12.0+rocm7.14.0"
+  model:
+    repository: "opendatalab/MinerU2.5-Pro-2605-1.2B"
+    revision: "bff20d4ae2bf202df9f45284b4d43681555a97ed"
+
+vllm_worker:
+  version: "0.21.0"
+  source_commit: "ad7125a431e176d4161099480a66f0169609a690"
+  python: "3.13.13"
+  pytorch: "2.11.0+rocm7.14.0"
+  transformers: "4.57.6"
+  bind: "127.0.0.1:18080"
+  mineru_source_patched: false
+  system_rocm_patched: false
+  hsa_override_used: false
+
+domain_corpus:
+  distributable: false
+  documents: 30
+  pages: 256
+  bytes: 18318783
+  per_file_sha256_verified_before_run: true
+
+results:
+  vllm_0_21_domain_256p:
+    elapsed_seconds: 1049.80
+    documents_completed: 30
+    pages_completed: 256
+    max_client_rss_kib: 2078592
+    swap_events: 0
+    blocks: 5372
+    images: 216
+    image_references: 164
+    missing_image_references: 0
+    exit_status: 0
+    content_similarity_to_cross_platform_reference: 0.9574736713787534
+    markdown_similarity_to_cross_platform_reference: 0.9447755871414744
+  rejected_vllm_0_23_1:
+    source: "AMD ROCm 7.14 gfx1151 wheel"
+    server_start: passed
+    tested_attention_modes: 3
+    inference: failed_repeated_exclamation_output
+    adopted: false
+  transformers_multi_document:
+    default_concurrency:
+      max_concurrent_requests: 3
+      documents_requested: 5
+      pages_requested: 14
+      documents_completed: 1
+      pages_completed: 4
+      failed_tasks: 4
+      elapsed_seconds: 338.74
+      exit_status: 1
+      error: "Qwen2-VL position tensor shape mismatch"
+      status: rejected
+    single_worker:
+      max_concurrent_requests: 1
+      documents_completed: 2
+      pages_completed: 8
+      completed_processing_seconds: 258.0
+      blocks: 345
+      vllm_same_documents_seconds: 53.185
+      warm_speed_ratio: 4.85
+      text_similarity_to_vllm: 0.999776755815511
+      markdown_similarity_to_vllm: 0.9989939197760378
+      larger_run_completed: false
+      interrupted_by_independent_system_event: true
+      status: validated_8_pages
+
+system_incidents:
+  - id: "2026-08-08-unexplained-host-restart"
+    classification: independent_system_event
+    cause_confirmed: false
+    previous_boot_last_journal: "2026-08-08T10:46:22+08:00"
+    next_boot_start: "2026-08-08T10:49:10+08:00"
+    pstore_records: 0
+    post_restart_gpu_probe: passed
+    excluded_from_mineru_compatibility_verdict: true
+
+public_benchmarks:
+  omnidocbench:
+    status: planned
+    current_track: "v1.7"
+    compatibility_track: "v1.6"
+    pilot_pages: 50
+    full_pages: 1651
+  olmocr_bench:
+    status: planned
+    pilot_pdfs: 100
+    full_pdfs: 1403
+
+related_work:
+  aiwork4me_mineru_rocm:
+    repository: "https://github.com/AIwork4me/MinerU-ROCm"
+    observed_head: "1585e1ec08e5d37bbad068f392cbf9864f016118"
+  buptanswer_mineru:
+    repository: "https://github.com/buptanswer/mineru"
+    observed_head: "c6e9606883e3aee6b1a8c697a8720137a1661e44"

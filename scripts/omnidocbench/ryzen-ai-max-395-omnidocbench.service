@@ -1,0 +1,17 @@
+[Unit]
+Description=Ryzen AI MAX+ 395 OmniDocBench dual-track benchmark
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/ai395/omnidocbench-test-lab
+ExecStart=/usr/bin/bash %h/ai395/omnidocbench-test-lab/scripts/run_all.sh
+Restart=on-failure
+RestartSec=300
+TimeoutStopSec=120
+KillMode=control-group
+StandardOutput=append:%h/ai395/omnidocbench-test-lab/logs/orchestrator.log
+StandardError=append:%h/ai395/omnidocbench-test-lab/logs/orchestrator.log
+
+[Install]
+WantedBy=default.target

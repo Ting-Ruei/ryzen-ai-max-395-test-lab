@@ -81,9 +81,10 @@ SECURITY.md                   公開前的資料與祕密規則
 ## 相關社群工作
 
 - [AIwork4me/MinerU-ROCm](https://github.com/AIwork4me/MinerU-ROCm)：提供
-  OmniDocBench 評估、Linux W7900／gfx1100 ROCm 路徑，以及 Windows-HIP
-  Strix Halo 經驗。本專案聚焦其尚未覆蓋的 Linux gfx1151 + Ubuntu 26.04 +
-  ROCm 7.14 組合，兩者互補。
+  OmniDocBench 評估與 Linux W7900／gfx1100 ROCm 路徑。依其提交的硬體
+  metadata，另有 Windows-HIP Ryzen AI MAX+ 395／Radeon 8060S（Strix Halo）
+  bundle；本專案未獨立驗證該 SKU。本專案聚焦其尚未覆蓋的 Linux gfx1151 +
+  Ubuntu 26.04 + ROCm 7.14 組合，兩者互補。
 - [buptanswer/mineru](https://github.com/buptanswer/mineru)：提供消費級 AMD
   顯卡自行編譯 vLLM 與 MinerU 適配的實作經驗。
 - [opendatalab/MinerU](https://github.com/opendatalab/MinerU)：上游專案。

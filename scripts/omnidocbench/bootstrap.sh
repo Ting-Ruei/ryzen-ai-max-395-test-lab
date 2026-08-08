@@ -40,6 +40,8 @@ if [[ ! -x "$CLIENT_PYTHON" ]]; then
 fi
 
 log "downloading pinned OmniDocBench dataset snapshot"
+export HF_HUB_DISABLE_XET="${HF_HUB_DISABLE_XET:-1}"
+export HF_HUB_DOWNLOAD_TIMEOUT="${HF_HUB_DOWNLOAD_TIMEOUT:-300}"
 "$CLIENT_PYTHON" - "$DATA_ROOT" "$DATASET_REPOSITORY" "$DATASET_REVISION" <<'PY'
 import sys
 from huggingface_hub import snapshot_download
@@ -50,7 +52,7 @@ snapshot_download(
     repo_type="dataset",
     revision=revision,
     local_dir=destination,
-    max_workers=8,
+    max_workers=2,
 )
 PY
 

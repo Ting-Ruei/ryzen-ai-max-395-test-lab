@@ -5,7 +5,7 @@ After=network-online.target
 [Service]
 Type=simple
 WorkingDirectory=%h/ai395/omnidocbench-test-lab
-ExecStart=/usr/bin/bash %h/ai395/omnidocbench-test-lab/scripts/run_all.sh
+ExecStart=/usr/bin/bash %h/ai395/omnidocbench-test-lab/scripts/run_unattended.sh
 Restart=on-failure
 RestartSec=300
 TimeoutStopSec=120

@@ -94,11 +94,23 @@ system_incidents:
 
 public_benchmarks:
   omnidocbench:
-    status: planned
+    status: complete
     current_track: "v1.7"
     compatibility_track: "v1.6"
     pilot_pages: 50
     full_pages: 1651
+    completed_at: "2026-08-09T00:31:45+08:00"
+    inference:
+      backend: "vllm-0.21.0"
+      pages_attempted: 1651
+      pages_succeeded: 1651
+      pages_failed: 0
+      elapsed_seconds: 15843.4895
+      prediction_manifest_sha256: "f729c68c70195667e805703c988e62af50c3480d4248ad6ef7878046571f2102"
+    scores:
+      v1_6_overall: 95.59419411368214
+      v1_7_overall: 95.59419411368214
+      metric_parity: true
   olmocr_bench:
     status: planned
     pilot_pdfs: 100

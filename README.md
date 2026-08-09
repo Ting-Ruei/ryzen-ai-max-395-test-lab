@@ -11,7 +11,8 @@ ROCm Transformers、實驗性 AOTriton 與自行編譯的 vLLM 0.21。後續可�
 reranking 與批次 AI 工作。
 
 > 本專案是單機社群實測，不代表 AMD、MinerU、vLLM 或 OpenDataLab 的官方
-> 支援聲明。未完成公開 benchmark 的結果不應解讀為通用品質排名。
+> 支援聲明。尚未完成的公開 benchmark 不應解讀為通用品質排名；已完成的
+> 分數仍只代表本頁所列硬體、版本與執行設定。
 
 ## 已驗證平台
 
@@ -52,6 +53,24 @@ Apple Silicon backend 的參考輸出，頁數完全一致，但區塊為 5,372 
 [benchmark 方法](docs/benchmark-methodology.md)。
 OmniDocBench 的固定版本、斷線續跑與雙 scorer 設計見
 [雙軌評測說明](docs/omnidocbench-dual-track.md)。
+
+### OmniDocBench 完整結果（已完成）
+
+2026-08-08～09（Asia/Taipei）在同一個 AI MAX+ 395 上，以 vLLM 0.21.0
+服務 `mineru-vlm-1.2b` 完成完整 1,651 頁 prediction；1,651/1,651 成功、
+0 失敗，推論 wall time 為 15,843.4895 秒。v1.6 compatibility scorer 與
+v1.7 current scorer 都完成，結果如下：
+
+| track | text edit distance ↓ | formula CDM ↑ | table TEDS ↑ | reading-order edit distance ↓ | Overall ↑ |
+|---|---:|---:|---:|---:|---:|
+| v1.6 compatibility | 0.0348329083 | 96.7656% | 93.5003% | 0.1231489910 | 95.5942 |
+| v1.7 current | 0.0348329083 | 96.7656% | 93.5003% | 0.1231489910 | 95.5942 |
+
+這是官方 scorer 下的本機實測摘要，不是對其他模型或平台的排名；兩軌
+使用同一份 1,651 頁 prediction，並以獨立 scorer revision 留存 provenance。
+完整指標、資源觀察、固定 revision 與 prediction manifest checksum 見
+[OmniDocBench 結果](results/mineru-3.4.4/omnidocbench/README.md) 與
+[公開 manifest](results/mineru-3.4.4/omnidocbench/manifest.yaml)。
 
 ## 專案原則
 
@@ -94,4 +113,6 @@ SECURITY.md                   公開前的資料與祕密規則
 
 本 repository 採 Apache-2.0 授權。MinerU 3.4.4 的既有結果已完成匿名化與
 發布前檢查；OmniDocBench v1.6 compatibility track 與 v1.7 current track
-正在獨立執行，完成前不發布分數，也不據此更新外部 Issue。
+已完成並以新結果摘要公開。prediction 原始檔不放入 repository，只公開
+可重建所需的固定 revision、aggregate 分數與 manifest SHA-256；olmOCR-Bench
+仍待後續規劃。

@@ -17,5 +17,6 @@
   [AIwork4me/MinerU-ROCm #21](https://github.com/AIwork4me/MinerU-ROCm/issues/21)、
   [buptanswer/mineru #2](https://github.com/buptanswer/mineru/issues/2)。
 - [x] OmniDocBench v1.6／v1.7 完整評測完成後，以新 commit 補分數與 prediction manifest。
-- [x] 完整 1,651 頁完成後建立不可變的 results permalink：\n  [OmniDocBench result at commit 9e7f168](https://github.com/Ting-Ruei/ryzen-ai-max-395-test-lab/blob/9e7f168879e96527d82865220c918eebe2b8d3ab/results/mineru-3.4.4/omnidocbench/README.md)。
+- [x] 完整 1,651 頁完成後建立不可變的 results permalink：
+  [OmniDocBench result at commit 9e7f168](https://github.com/Ting-Ruei/ryzen-ai-max-395-test-lab/blob/9e7f168879e96527d82865220c918eebe2b8d3ab/results/mineru-3.4.4/omnidocbench/README.md)。
 - [ ] 任何新 ROCm、PyTorch 或 backend 組合新增一列矩陣，不覆寫舊結果。

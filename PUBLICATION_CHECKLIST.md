@@ -13,7 +13,9 @@
 
 ## 首次發布後
 
-- [ ] 將 Linux gfx1151 結果分享至對應的 MinerU／ROCm 社群 Issue。
-- [ ] OmniDocBench v1.6／v1.7 完整評測完成後，以新 commit 補分數與 prediction manifest。
+- [x] 將 Linux gfx1151 結果分享至對應的 MinerU／ROCm 社群 Issue：
+  [AIwork4me/MinerU-ROCm #21](https://github.com/AIwork4me/MinerU-ROCm/issues/21)、
+  [buptanswer/mineru #2](https://github.com/buptanswer/mineru/issues/2)。
+- [x] OmniDocBench v1.6／v1.7 完整評測完成後，以新 commit 補分數與 prediction manifest。
 - [ ] 完整 1,651 頁完成後建立不可變的 results tag。
 - [ ] 任何新 ROCm、PyTorch 或 backend 組合新增一列矩陣，不覆寫舊結果。

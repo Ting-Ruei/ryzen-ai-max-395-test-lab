@@ -1,0 +1,46 @@
+schema_version: 1
+status: complete
+captured_at: "2026-08-08T23:30:27+08:00"
+platform:
+  apu: "AMD Ryzen AI MAX+ 395"
+  gpu: "AMD Radeon 8060S Graphics"
+  architecture: gfx1151
+  os: "Ubuntu 26.04"
+  kernel: "7.0.0-29-generic"
+  rocm: "7.14"
+  hip: "7.14.60850"
+inference:
+  backend: "vllm-0.21.0"
+  served_model: "mineru-vlm-1.2b"
+  pages_attempted: 1651
+  pages_succeeded: 1651
+  pages_failed: 0
+  elapsed_seconds: 15843.4895
+  prediction_manifest_sha256: "f729c68c70195667e805703c988e62af50c3480d4248ad6ef7878046571f2102"
+dataset:
+  name: "OmniDocBench full"
+  pages: 1651
+  revision: "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec"
+  ground_truth_sha256: "a45cd84b04ad8b793e775089640e6b681209abea33ead54c1828ddca35fae496"
+scoring:
+  metric_parity: true
+  v1_6:
+    scorer_commit: "2b161d010d2e3aff77a0edef359ea3a6411d23cd"
+    text_edit_distance: 0.03483290832570235
+    formula_cdm: 0.9676559778973065
+    table_teds: 0.9350027538388601
+    reading_order_edit_distance: 0.12314899083785329
+    overall: 95.59419411368214
+  v1_7:
+    scorer_commit: "193627ae9e97d89188468ed1ee3b7a856ff76044"
+    text_edit_distance: 0.03483290832570235
+    formula_cdm: 0.9676559778973065
+    table_teds: 0.9350027538388601
+    reading_order_edit_distance: 0.12314899083785329
+    overall: 95.59419411368214
+scorer:
+  image: "ghcr.io/zeng-weijun/omnidocbench-eval@sha256:6116ad72172e763b5c43e963d5efebf2093f2362b975f58156ce4f6c9142e617"
+publication:
+  raw_predictions_committed: false
+  private_inputs_committed: false
+  summary: "results/mineru-3.4.4/omnidocbench/README.md"

@@ -98,10 +98,11 @@ docker run --rm --network none \
   -e HOME=/tmp/omnidoc-home \
   -e PYTHONPATH=/workspace/OmniDocBench \
   -v "$SOURCE_ROOT/omnidocbench-v17:/workspace/OmniDocBench" \
+  -v "$SCRIPT_DIR:/workspace/lab-scripts:ro" \
   -w /workspace/OmniDocBench \
   --entrypoint bash \
   "$SCORER_IMAGE" \
-  -lc 'python -m pytest tools/test_environment_and_smoke.py::TestEnvironmentVersions tools/test_environment_and_smoke.py::TestCDMCalculation -q'
+  -lc 'python /workspace/lab-scripts/scorer_smoke.py'
 
 "$CLIENT_PYTHON" - "$STATE_ROOT/bootstrap.json" "$SCORER_IMAGE" "$AIWORK_COMMIT" "$OMNIDOC_V16_COMMIT" "$OMNIDOC_V17_COMMIT" "$DATASET_REVISION" "$GT_SHA256" <<'PY'
 import datetime

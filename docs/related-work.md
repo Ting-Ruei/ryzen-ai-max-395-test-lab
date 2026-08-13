@@ -9,12 +9,15 @@ evaluation-backed 社群工作。其公開資料涵蓋：
 - Linux Radeon PRO W7900／`gfx1100`／ROCm 7.2；
 - MinerU pipeline 與 vLLM-on-ROCm；
 - OmniDocBench v1.6 完整 1,651 頁與可重現結果；
-- Windows-HIP 的 Ryzen AI MAX+ 395／Strix Halo 實驗。
+- 依該 repository 提交硬體 metadata 所標示的 Windows-HIP Ryzen AI MAX+ 395／
+  Radeon 8060S（Strix Halo）實驗；本專案未獨立驗證該 SKU。
 
 本專案不複製其 adapter 或宣稱取代它，而是補上 Linux Strix Halo 的新交叉
 組合：Ubuntu 26.04、ROCm 7.14、`gfx1151`、統一記憶體、MinerU 3.4.4、
-Python 3.13 vLLM worker，以及長時間 soak／資源觀測。正式 benchmark 盡量
-沿用相同 OmniDocBench schema，讓結果能互相比較。
+Python 3.13 vLLM worker，以及長時間 soak／資源觀測。AIwork4me 的 Linux
+ROCm benchmark 是 W7900／gfx1100，不應與其 Windows-HIP 395 bundle 混為
+同一環境。正式 benchmark 盡量沿用相同 OmniDocBench schema，讓結果能互相
+比較。
 
 ## buptanswer/mineru
 
